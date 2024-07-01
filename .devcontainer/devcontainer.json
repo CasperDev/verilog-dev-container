@@ -1,20 +1,17 @@
 {
   "name": "SystemVerilog Dev",
-  "image": "ubuntu:jammy",
-  "runArgs": [
-    "--name",
-    "systemverilog-dev"
-  ],
+  "image": "casperdevelop/verilog-dev",
   "remoteEnv": {
     "LANG": "C.UTF-8"
   },
-  "postCreateCommand": "./.devcontainer/post-create.sh",
+  //"postCreateCommand": "./.devcontainer/post-create.sh",
   "customizations": {
     "vscode": {
       "extensions": [
         "mshr-h.veriloghdl",
         "ms-python.python",
-        "ms-vscode.makefile-tools"
+        "ms-vscode.makefile-tools",
+        "ms-python.flake8"
       ]
     }
   }

@@ -20,7 +20,7 @@
         {
             "label": "View Waveform",
             "type": "shell",
-            "command": "make -C ${fileDirname} waveform",
+            "command": "make -C ${fileDirname} wave",
             "problemMatcher": []
         },
         {

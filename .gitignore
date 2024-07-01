@@ -165,3 +165,4 @@ cython_debug/
 *.o
 *.vpp
 *.vcd
+sim_build/

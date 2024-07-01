@@ -1,6 +1,11 @@
-`timescale 1ns / 1ps
 
-module counter_tb;
+// top module under test
+`include "../src/counter.sv"
+`ifndef DUMPFILE_PATH
+`define DUMPFILE_PATH "counter.vcd"
+`endif
+
+module counter_tb();
 
   localparam int N = 8;  // counter bit width
   localparam int T = 10;  // clock period in ns
@@ -41,10 +46,13 @@ module counter_tb;
   end
 
   initial begin
-    $timeformat(-9, 1, " ns", 8);
+    //$timeformat(-9, 1, " ns", 8);
     $monitor("time=%t clk=%b rst=%b en=%b count=%2d", $time, clk, rst, en, count);
-    $dumpfile("counter_tb.vcd");
+    // already defined in init_tb.vh file
+    $dumpfile(`DUMPFILE_PATH);
     $dumpvars(0, counter_tb);
   end
+
+  //`INIT_TEST
 
 endmodule  // counter_tb
